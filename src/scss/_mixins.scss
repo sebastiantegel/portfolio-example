@@ -1,0 +1,21 @@
+@mixin background-line($left, $xStart, $xEnd) {
+  content: "";
+  background-color: darkgoldenrod;
+  position: absolute;
+  inset: 0;
+  left: $left;
+  height: 100%;
+  clip-path: polygon($xStart 0, 100% 0, 100% 100%, $xEnd 100%);
+}
+
+@mixin tablet {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

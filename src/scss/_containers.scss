@@ -1,0 +1,103 @@
+@use "mixins";
+@use "variables" as v;
+
+#app {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 100%;
+  scroll-behavior: smooth;
+
+  @include mixins.tablet() {
+    display: flex;
+    flex: none;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    height: 100%;
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+
+  scroll-snap-align: start;
+
+  background-color: bisque;
+
+  * {
+    z-index: 1;
+  }
+
+  &__title {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 0;
+    mix-blend-mode: difference;
+    color: grey;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: transform 1s, opacity 1s;
+  }
+
+  &__ingress {
+    width: 50%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.5s, opacity 0.3s;
+
+    h3 {
+      font-size: 2rem;
+      color: white;
+      line-height: 100%;
+      background: linear-gradient(
+        transparent 0 30%,
+        rgba(0, 0, 0, 0.7) 30% 80%,
+        transparent 80% 100%
+      );
+      display: inline;
+    }
+  }
+
+  &:nth-child(1) {
+    &::after {
+      @include mixins.background-line(0, 30%, 20%);
+
+      @include mixins.tablet() {
+        clip-path: polygon(0 0, 100% 10%, 100% 80%, 0 20%);
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    &::after {
+      @include mixins.background-line(0, 20%, 40%);
+
+      @include mixins.tablet() {
+        clip-path: polygon(0 10%, 100% 60%, 100% 100%, 0 80%);
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    width: 100%;
+
+    &::after {
+      @include mixins.background-line(0, 40%, 30%);
+
+      @include mixins.tablet() {
+        clip-path: polygon(0 60%, 100% 20%, 100% 40%, 0 100%);
+      }
+    }
+  }
+
+  @include mixins.tablet() {
+    height: 100%;
+    width: calc(100% - v.$box-padding);
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS stuff</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div class="box" id="box-1">
+        <h2 class="box__title">My awesome title</h2>
+        <div class="box__ingress">
+          <h3>
+            Lorem ipsum dolor sit amet, something a little longer to get line
+            breaks
+          </h3>
+        </div>
+        <div class="arrow">
+          <a href="#box-2" title="Framåt till om mig"
+            ><i class="bi bi-arrow-right-circle"></i
+          ></a>
+        </div>
+      </div>
+      <div class="box" id="box-2">
+        <div class="arrow arrow--back">
+          <a href="#box-1" title="Tillbaka till start"
+            ><i class="bi bi-arrow-left-circle"></i
+          ></a>
+        </div>
+        <h2 class="box__title">About me</h2>
+        <div class="box__ingress">
+          <h3>
+            Lorem ipsum dolor sit amet, something a little longer to get line
+            breaks
+          </h3>
+          <p>Something interesting goes here...</p>
+        </div>
+        <div class="arrow">
+          <a href="#box-3" title="Framåt till projekten"
+            ><i class="bi bi-arrow-right-circle"></i
+          ></a>
+        </div>
+      </div>
+      <div class="box" id="box-3">
+        <div class="arrow arrow--back">
+          <a href="#box-2" title="Tillbaka till om mig"
+            ><i class="bi bi-arrow-left-circle"></i
+          ></a>
+        </div>
+        <h2 class="box__title">Projects</h2>
+        <div class="box__ingress">
+          <h3>My awesome projects</h3>
+        </div>
+
+        <div class="projects">
+          <div class="project">Project 1</div>
+          <div class="project">Project 2</div>
+          <div class="project">Project 3</div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/ts/main.ts"></script>
+  </body>
+</html>

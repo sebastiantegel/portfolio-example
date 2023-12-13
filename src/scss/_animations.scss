@@ -1,0 +1,31 @@
+.fade-in {
+  & .box__title {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  & .box__ingress {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  & .project {
+    opacity: 1;
+    transform: translateY(0);
+
+    &:hover {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0);
+      cursor: pointer;
+    }
+
+    &:nth-child(1) {
+      transition-delay: calc(0.15s * var(--index));
+    }
+    &:nth-child(2) {
+      transition-delay: calc(0.15s * var(--index));
+    }
+    &:nth-child(3) {
+      transition-delay: calc(0.15s * var(--index));
+    }
+  }
+}
